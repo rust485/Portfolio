@@ -1,22 +1,37 @@
 .navbar {
+ font-family: verdana;
  background-color: #0e62ea;
  height: 50px;
  padding: 5px;
- text-align: center;
+ text-align: left;
 }
 
 .navbar-item {
  color: white;
- font-size: 30px;
+ font-size: 20px;
  text-align: center;
  display: inline-block;
- padding: 10px;
- padding-top: 15px;
+ padding: 20px;
+ padding-top: 20px;
  text-align: bottom;
+ border-radius: 5px;
+}
+
+.navbar-item:hover {
+  background-color: #0a55ce;
 }
 
 .selected {
  background-color: white;
  color: #0e62ea;
- height: 40px;
+}
+
+.selected:hover {
+  background-color: white;
+}
+
+.splitter {
+ background-color: white;
+ height: 10px;
+ position: relative;
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-const links = ["Home", "Projects", "Contact"];
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,8 +7,20 @@ const links = ["Home", "Projects", "Contact"];
 })
 export class NavbarComponent implements OnInit
 {
-  inks = ['Home', 'Projects', 'Contacts'];
-  constructor() { }
+  links: string[];
+
+  selected: string;
+
+  constructor()
+  {
+    this.links = ['Home', 'Projects', 'Contacts'];
+    this.selected = this.links[0];
+  }
+
+  changeTab(tab:string)
+  {
+    this.selected = tab;
+  }
 
   ngOnInit()
   {
