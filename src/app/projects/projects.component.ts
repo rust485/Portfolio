@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ProjectList }       from '../../assets/project-list';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  projects: Object[];
 
-  constructor() { }
+  constructor()
+  {
+    this.projects = ProjectList;
+  }
 
   ngOnInit() {
   }

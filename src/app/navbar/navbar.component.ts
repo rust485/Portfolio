@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location }          from '@angular/common';
 
 class NavRoute
 {
@@ -22,16 +23,20 @@ export class NavbarComponent implements OnInit
 
   selected: NavRoute;
 
-  constructor()
+  constructor(location: Location)
   {
     this.links = [new NavRoute('Home', '/home'),
                   new NavRoute('Projects', '/projects'),
                   new NavRoute('Contact', '/contact'),
                   new NavRoute('Resume', '/resume')];
-    this.selected = this.links[0];
+    let loc: string = location.path();
+    if (!this.changeTabByURL(loc))
+      this.selected = this.links[0];
+
+    console.log(this.selected);
   }
 
-  changeTab(tab:string): void
+  changeTab(tab:string): boolean
   {
     // use this instead of js built-ins for performance purposes :)
     for (let i = 0; i < this.links.length; i++)
@@ -39,9 +44,24 @@ export class NavbarComponent implements OnInit
       if (this.links[i].name === tab)
       {
         this.selected = this.links[i];
-        return;
+        return true;
       }
     }
+    return false;
+  }
+
+  changeTabByURL(url:string): boolean
+  {
+    for (let i = 0; i < this.links.length; i++)
+    {
+      if (this.links[i].route === url)
+      {
+        console.log(this.links[i]);
+        this.selected = this.links[i];
+        return true;
+      }
+    }
+    return false;
   }
 
   getLinkRoute(link:string): string { return '/' + link.toLowerCase(); }
