@@ -4,7 +4,7 @@ export class Project
   description: string;
   role:        string;
   skills:      string;
-  resources:   string;
+  resources:   string[];
 
   constructor(name, description, role, skills, resources)
   {

@@ -1,6 +1,6 @@
 <div class="navbar">
-  <a *ngFor='let link of links' class="navbar-item" [ngClass]="(selected === link)?'selected':''" (click)="changeTab(link)">
-    {{link}}
-  </a>
+  <nav *ngFor='let link of links' class="navbar-item" [ngClass]="(selected.name === link.name)?'selected':''" (click)="changeTab(link.name)" routerLink={{link.route}}>
+    {{link.name}}
+  </nav>
 </div>
-<div class="splitter"></div>
+<div class="splitter "></div>
