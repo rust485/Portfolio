@@ -6,21 +6,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  @Input() items: Object[];
-  @Input() rootroute: string;
+  @Input()
+  items: Object[];
+  @Input()
+  root: string;
+
   selected: Object;
 
-  constructor()
-  {
-    this.selected = this.items[0];
-  }
+  constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { this.selected = this.items[0]; }
 
   getRoute(item: Object): string
   {
-    return this.rootroute + '/' + Object.name;
+    return this.root + '/' + Object.name;
   }
 
   updateSelected(item: Object)

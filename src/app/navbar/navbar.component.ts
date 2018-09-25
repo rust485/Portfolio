@@ -32,8 +32,6 @@ export class NavbarComponent implements OnInit
     let loc: string = location.path();
     if (!this.changeTabByURL(loc))
       this.selected = this.links[0];
-
-    console.log(this.selected);
   }
 
   changeTab(tab:string): boolean
@@ -56,7 +54,6 @@ export class NavbarComponent implements OnInit
     {
       if (this.links[i].route === url)
       {
-        console.log(this.links[i]);
         this.selected = this.links[i];
         return true;
       }

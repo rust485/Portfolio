@@ -1,6 +1,7 @@
 <div class="navbar">
-  <nav *ngFor='let link of links' class="navbar-item" [ngClass]="(selected.name === link.name)?'selected':''" (click)="changeTab(link.name)" routerLink={{link.route}}>
+  <nav *ngFor='let link of links' class="navbar-item" [ngClass]="(selected.name === link.name)?'navbar-selected':''" (click)="changeTab(link.name)" routerLink={{link.route}}>
     {{link.name}}
   </nav>
+
+  <a href="https://github.com/rust485" target='_blank'><img id='github-icon' src='../../assets/github-icon.svg' alt='GitHub'></a>
 </div>
-<div class="splitter "></div>
