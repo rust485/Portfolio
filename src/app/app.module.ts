@@ -10,6 +10,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectViewComponent } from './project-view/project-view.component';
     ContactComponent,
     ResumeComponent,
     SidebarComponent,
-    ProjectViewComponent
+    ProjectViewComponent,
+    WorkExperienceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="projects-container">
-  <app-sidebar [items]="projects">
+  <app-sidebar [items]="projects" (selected)='onSelected($event)'>
   </app-sidebar>
-  <app-project-view>
+  <app-project-view [project]='currentProject'>
   </app-project-view>
 </div>

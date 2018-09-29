@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router }    from '@angular/router';
 import { Location }          from '@angular/common';
 
 class NavRoute
@@ -23,15 +24,16 @@ export class NavbarComponent implements OnInit
 
   selected: NavRoute;
 
-  constructor(location: Location)
+  constructor(
+    private router: Router,
+    private location: Location
+  )
   {
     this.links = [new NavRoute('Home', '/home'),
                   new NavRoute('Projects', '/projects'),
-                  new NavRoute('Contact', '/contact'),
-                  new NavRoute('Resume', '/resume')];
-    let loc: string = location.path();
-    if (!this.changeTabByURL(loc))
-      this.selected = this.links[0];
+                  new NavRoute('Work Experience', '/work-experience'),
+                  new NavRoute('Resume', '/resume'),
+                  new NavRoute('Contact', '/contact')];
   }
 
   changeTab(tab:string): boolean
@@ -65,6 +67,8 @@ export class NavbarComponent implements OnInit
 
   ngOnInit()
   {
-
+    let tree = this.location.path().split('/');
+    if (!this.changeTabByURL('/' + tree[1]))
+      this.selected = this.links[0];
   }
 }

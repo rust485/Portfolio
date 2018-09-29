@@ -1,6 +1,9 @@
-export const ProjectList =
+import { Project } from "../app/models/Project";
+
+export const ProjectList: Project[] =
 [
   {
+    id:          0,
     name:        "Squad Command",
     description: "An RTS game developed in Node.js. Players maintain and        \
                   control their forces In an attempt to defeat their opponents. \
@@ -12,6 +15,7 @@ export const ProjectList =
     resources:   ["Node.js", "HTML", "HTML Canvas"]
   },
   {
+    id:          1,
     name:        "C Shell",
     description: "An implementation of a bash-like shell in the C language.   \
                   The shell is capable of running programs in the background, \

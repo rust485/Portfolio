@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,23 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @Input()
   items: Object[];
-  @Input()
-  root: string;
 
-  selected: Object;
+  @Output() selected = new EventEmitter<Object>();
+  _selected: Object;
 
   constructor() { }
 
-  ngOnInit() { this.selected = this.items[0]; }
-
-  getRoute(item: Object): string
-  {
-    return this.root + '/' + Object.name;
-  }
+  ngOnInit() { this._selected = this.items[0]; }
 
   updateSelected(item: Object)
   {
-    this.selected = item;
+    this.selected.emit(item);
+    this._selected = item;
   }
-
 }
