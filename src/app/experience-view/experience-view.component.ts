@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { Job } from '../models/Job';
+
+const monthNames = [
+  "Jan", "Feb", "March", "April", "May", "June",
+  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
+];
 
 @Component({
   selector: 'app-experience-view',
@@ -7,7 +14,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceViewComponent implements OnInit {
 
+
+
+  @Input()
+  selected: Job;
+
   constructor() { }
+
+  getDate(date: Date): string
+  {
+    return monthNames[date.getMonth()] + " " + date.getFullYear();
+  }
+
+  getDateInterval(job: Job): string
+  {
+    return this.getDate(job.from) + " - " + this.getDate(job.to);
+  }
 
   ngOnInit() {
   }

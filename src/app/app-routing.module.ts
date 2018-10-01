@@ -8,14 +8,15 @@ import { ResumeComponent }         from './resume/resume.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 
 const routes: Routes = [
-  { path: 'home',            component: HomeComponent },
-  { path: 'contact',         component: ContactComponent },
-  { path: 'projects/:id',    component: ProjectsComponent },
-  { path: 'resume',          component: ResumeComponent },
-  { path: 'work-experience', component: WorkExperienceComponent },
+  { path: 'home',                component: HomeComponent },
+  { path: 'contact',             component: ContactComponent },
+  { path: 'projects/:id',        component: ProjectsComponent },
+  { path: 'resume',              component: ResumeComponent },
+  { path: 'work-experience/:id', component: WorkExperienceComponent },
 
-  { path: '', redirectTo: '/home', pathMatch:'full'},
-  { path: 'projects', redirectTo: '/projects/0', pathMatch:'full'}
+  { path: '',                redirectTo: '/home',              pathMatch:'full'},
+  { path: 'projects',        redirectTo: '/projects/0',        pathMatch:'full'},
+  { path: 'work-experience', redirectTo: '/work-experience/0', pathMatch:'full'}
 ]
 
 @NgModule({

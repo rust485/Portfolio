@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Project } from '../models/Project';
+import { Project }                  from '../models/Project';
+import { SDProject}                 from '../models/SDProject';
 
 @Component({
   selector: 'app-project-view',
@@ -7,11 +8,15 @@ import { Project } from '../models/Project';
   styleUrls: ['./project-view.component.css']
 })
 export class ProjectViewComponent implements OnInit {
-
   @Input()
   project: Project;
 
   constructor() { }
+
+  isSDProject(project)
+  {
+    return project.contrib !== undefined;
+  }
 
   ngOnInit() {
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location }          from '@angular/common';
+import { ActivatedRoute }    from '@angular/router';
 
 import { Job }               from '../models/Job';
 import { JobService }        from '../job.service';
@@ -14,7 +16,9 @@ export class WorkExperienceComponent implements OnInit {
   currentJob: Job;
 
   constructor(
-    private jobService: JobService
+    private jobService: JobService,
+    private route: ActivatedRoute,
+    private location: Location
   ) { }
 
   getJobs(): void
@@ -26,5 +30,37 @@ export class WorkExperienceComponent implements OnInit {
   {
     this.getJobs();
     this.currentJob = this.jobs[0];
+
+    this.route.params.subscribe(params =>
+    {
+      if (this.currentJob.id != params['id'])
+        this.setSelectedByID(params['id']);
+    });
+  }
+
+  getJobByID(id: number): Job
+  {
+    for (let i = 0; i < this.jobs.length; i++)
+      if (this.jobs[i].id === id)
+        return this.jobs[i];
+
+    return null;
+  }
+
+  onSelected(selected: Job): void
+  {
+    this.setSelectedByID(selected.id);
+  }
+
+  setSelected(job: Job)
+  {
+    this.currentJob = job;
+    this.location.go('/work-experience/' + job.id);
+  }
+
+  setSelectedByID(id: number): void
+  {
+    let job: Job = this.getJobByID(id);
+    this.setSelected(job);
   }
 }

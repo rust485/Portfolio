@@ -1,3 +1,18 @@
-<p>
-  experience-view works!
-</p>
+<div class="experience-view" ng-switch on="selected">
+  <h1 *ngIf="selected === null; else jobBlock">Job Not Found</h1>
+  <ng-template #jobBlock>
+    <div ng-switch-default>
+      <h1>{{selected.name}}</h1>
+      <h4>{{getDateInterval(selected)}}</h4> {{selected.role}}
+
+      <h3>Description</h3>
+      <ul>
+        <li *ngFor="let skill of selected.skills">{{skill}}</li>
+      </ul>
+      <h3>Evaluations</h3> {{selected.evaluations}}
+
+      <h3>Presentations</h3> {{selected.presentations}}
+
+    </div>
+  </ng-template>
+</div>

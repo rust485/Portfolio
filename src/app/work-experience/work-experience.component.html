@@ -1,6 +1,6 @@
 <div class="work-container">
   <app-sidebar [items]="jobs" (selected)='onSelected($event)'>
   </app-sidebar>
-  <app-experience-view>
+  <app-experience-view [selected]='currentJob'>
   </app-experience-view>
 </div>

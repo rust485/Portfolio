@@ -55,7 +55,13 @@ export class ProjectsComponent implements OnInit {
   setSelectedByID(id: number): void
   {
     // project dne is handled by project-view
-    this.currentProject = this.getProjectByID(id);
-    this.location.go('/projects/' + id);
+    let project: Project = this.getProjectByID(id);
+    this.setSelected(project);
+  }
+
+  setSelected(project: Project): void
+  {
+    this.currentProject = project;
+    this.location.go('/projects/' + project.id);
   }
 }

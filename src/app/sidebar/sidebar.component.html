@@ -1,5 +1,5 @@
 <div class="sidebar">
   <div *ngFor='let item of items' class="sidebar-item" [ngClass]="(item === _selected) ? 'sidebar-selected' : ''" (click)='updateSelected(item)'>
-    {{item.name}}
+    {{item.title}}
   </div>
 </div>

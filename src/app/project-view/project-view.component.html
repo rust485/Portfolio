@@ -1,6 +1,25 @@
 <div class="project-view" ng-switch on="project">
   <h1 *ngIf="project === null; else projBlock">Project Not Found</h1>
   <ng-template #projBlock>
-    <h1 ng-switch-default>{{project.name}}</h1>
+    <div ng-switch-default>
+      <h1>{{project.name}}</h1>
+      <a href="project.link">link</a>
+      <h3>Description</h3>
+      <p>{{project.description}}</p>
+      <h3>Role</h3>
+      <p>{{project.role}}</p>
+      <h3>Knowledge Gained</h3>
+      <p>{{project.skills}}</p>
+      <h3>Resources</h3>
+      <ul>
+        <li *ngFor="let resource of project.resources">{{resource}}</li>
+      </ul>
+      <div ng-switch on="project">
+        <div *ngIf="isSDProject(project)">
+          <h1>Contribution</h1>
+          <p>{{project.contrib}}</p>
+        </div>
+      </div>
+    </div>
   </ng-template>
 </div>

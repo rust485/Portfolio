@@ -4,8 +4,9 @@ export const JobList: Job[] =
 [
   {
     id: 0,
-    name: "Epic Systems",
-    role: "Software Development Intern",
+    name:  "Epic Systems",
+    title: "Epic Systems",
+    role:  "Software Development Intern",
     skills:
     [
       "Developed a machine learning system to optimize efficiency of professional healthcare \
@@ -15,19 +16,24 @@ export const JobList: Job[] =
       "Created architecture and project management plan from specified \
        technical and business scope."
     ],
-    from: new Date('May 2018'),
-    to:   new Date('August 2018')
+    from:          new Date('May 2018'),
+    to:            new Date('August 2018'),
+    evaluations:   "NA",
+    presentations: "NA"
   },
   {
     id: 1,
-    name: "Iowa State University",
-    role: "Com S 227 Teaching Assitant",
+    name:  "Iowa State University",
+    title: "Iowa State University",
+    role:  "Com S 227 Teaching Assitant",
     skills:
     [
       "Oversaw and facilitated weekly course instruction to over 40 undergraduate students.",
       "Implemented new curriculum to address difficulty in object oriented programming principles."
     ],
-    from: new Date('January 2018'),
-    to:   new Date('May 2018')
+    from:          new Date('January 2018'),
+    to:            new Date('May 2018'),
+    evaluations:   "NA",
+    presentations: "NA"
   }
 ]
