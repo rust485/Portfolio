@@ -11,6 +11,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { ExperienceViewComponent } from './experience-view/experience-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
     ResumeComponent,
     SidebarComponent,
     ProjectViewComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    ExperienceViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Job }               from '../models/Job';
+import { JobService }        from '../job.service';
+
 @Component({
   selector: 'app-work-experience',
   templateUrl: './work-experience.component.html',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkExperienceComponent implements OnInit {
 
-  constructor() { }
+  jobs: Job[];
+  currentJob: Job;
 
-  ngOnInit() {
+  constructor(
+    private jobService: JobService
+  ) { }
+
+  getJobs(): void
+  {
+    this.jobs = this.jobService.getJobs();
   }
 
+  ngOnInit()
+  {
+    this.getJobs();
+    this.currentJob = this.jobs[0];
+  }
 }

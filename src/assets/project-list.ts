@@ -25,4 +25,16 @@ export const ProjectList: Project[] =
                   understanding of threads and C synchronization methods.",
     resources:   ["C", "Linux"]
   },
+  {
+    id:          2,
+    name:        "C Server-Client",
+    description: "An implementation of a server-client combo that communicates \
+                 using HTTP requests. The client is capable of making HTTP requests \
+                 to any server. The server accepts HTTP requests with varying headers \
+                 and retrieves files and information based on the headers.",
+    role:        "Developer",
+    skills:      "Improvement of C programming abilities and increased knowledge of \
+                  server client communication. Also increased understanding of HTTP.",
+    resources:   ["C", "Linux"]
+  }
 ]
