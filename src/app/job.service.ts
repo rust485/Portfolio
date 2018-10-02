@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Job }        from './models/job';
+import { Job }        from './models/Job';
 import { JobList }    from '../assets/jobs-list';
 
 @Injectable({
