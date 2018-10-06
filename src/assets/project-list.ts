@@ -53,7 +53,7 @@ export const ProjectList: Project[] =
                   used to decide a winner.",
     role:        "Backend Lead",
     skills:      "Improved skills with Node.js and MongoDB. Also increased awareness \
-                  CL/CD pipelines.",
+                  CI/CD pipelines.",
     resources:   ["Node.js", "MongoDB"],
     link:        "inactive",
     contrib:     "not determined"
