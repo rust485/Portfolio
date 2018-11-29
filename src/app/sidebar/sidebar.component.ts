@@ -25,7 +25,6 @@ export class SidebarComponent implements OnInit {
 
   updateSelectedByID(id: number) : boolean
   {
-    console.log(id);
     if (id >= this.items.length) return false;
     this._selected = this.items[id];
     return true;
