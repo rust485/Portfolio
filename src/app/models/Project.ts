@@ -8,4 +8,6 @@ export class Project
   skills:      string;
   resources:   string[];
   link:        string;
+  images:      string[];
+  captions:    string[];
 }

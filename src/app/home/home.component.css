@@ -1,4 +1,10 @@
 .profile-picture {
   top: 70px;
   float: right;
+  margin-right: 200px;
+}
+
+.information {
+  width: 1000px;
+  margin-left: 200px;
 }

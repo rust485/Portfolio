@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { Location }                                       from '@angular/common';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,11 +12,26 @@ export class SidebarComponent implements OnInit {
   @Output() selected = new EventEmitter<Object>();
   _selected: Object;
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
 
-  ngOnInit() { this._selected = this.items[0]; }
+  ngOnInit()
+  {
+    let tree = this.location.path().split('/');
+    if (!this.updateSelectedByID(parseInt(tree[2])))
+      this._selected = this.items[0];
+  }
 
-  updateSelected(item: Object)
+  updateSelectedByID(id: number) : boolean
+  {
+    console.log(id);
+    if (id >= this.items.length) return false;
+    this._selected = this.items[id];
+    return true;
+  }
+
+  updateSelectedByObject(item: Object)
   {
     this.selected.emit(item);
     this._selected = item;

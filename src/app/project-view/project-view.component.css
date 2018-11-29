@@ -1,0 +1,20 @@
+.resources {
+  margin-left: 50px;
+}
+
+div.project-view p {
+  margin-left: 50px;
+  width: 1000px;
+}
+
+.project-view {
+  margin-left: 250px;
+}
+
+.project-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+}

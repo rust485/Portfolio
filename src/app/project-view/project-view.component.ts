@@ -11,14 +11,26 @@ export class ProjectViewComponent implements OnInit {
   @Input()
   project: Project;
 
-  constructor() { }
+  constructor()
+  {
+  }
 
   isSDProject(project)
   {
     return project.contrib !== undefined;
   }
 
-  ngOnInit() {
+  getImageSources() : Object[]
+  {
+    if (!this.project || !this.project.images) return [];
+    var imageSources: Object[] = [];
+    for (let i = 0; i < this.project.images.length; i++)
+      imageSources.push({source: '../assets/' + this.project.images[i], caption: this.project.captions[i]});
+    return imageSources;
+  }
+
+  ngOnInit()
+  {
 
   }
 
